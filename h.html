@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data: https://via.placeholder.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self';" />
+  <title>Contact Section</title>
+
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-blue: #004396;
+      --accent-yellow: #ffe547;
+      --light-bg: #f9f9f9;
+      --text-dark: #222;
+      --transition-ease: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Custom Colors */
+    .bg-primary-blue {
+      background-color: var(--primary-blue) !important;
+    }
+
+    .bg-accent-yellow {
+      background-color: var(--accent-yellow) !important;
+    }
+
+    .text-primary-blue {
+      color: var(--primary-blue) !important;
+    }
+
+    .text-accent-yellow {
+      color: var(--accent-yellow) !important;
+    }
+
+    .border-accent-yellow {
+      border-color: var(--accent-yellow) !important;
+    }
+
+    /* Contact Section */
+    #contact h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent-yellow);
+      bottom: -10px;
+      left: 0;
+    }
+
+    .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      transition: var(--transition-ease);
+    }
+
+    .contact-info .info-item:hover {
+      transform: translateX(5px);
+    }
+
+    .contact-info .info-item i {
+      font-size: 1.8rem;
+    }
+
+    .contact-info .info-item a {
+      text-decoration: none;
+      transition: var(--transition-ease);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-yellow);
+      box-shadow: 0 0 0 0.2rem rgba(255, 229, 71, 0.25);
+    }
+
+    .btn-submit:hover {
+      background-color: #ffd700 !important;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .social-links a {
+      transition: var(--transition-ease);
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 576px) {
+      .contact-info .info-item i {
+        font-size: 1.5rem;
+      }
+
+      .social-links a {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Contact Section -->
+  <section id="contact" class="py-5" data-aos="fade-up">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Contact Info Card -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body p-4">
+              <h2 class="card-title display-4 fw-bold text-primary-blue mb-4 position-relative">Contact Us</h2>
+              <p class="card-text fs-5 text-secondary mb-4">We're here to help you elevate your brand. Use the form, send an email, or give us a call!</p>
+              <div class="info-item mb-3">
+                <i class="bi bi-telephone-fill text-accent-yellow me-3" aria-hidden="true"></i>
+                <a href="tel:+19137612106" class="text-dark" aria-label="Phone number">913-761-2106</a>
+              </div>
+              <div class="info-item mb-3">
+                <i class="bi bi-envelope-fill text-accent-yellow me-3" aria-hidden="true"></i>
+                <a href="mailto:info@cloutnine.com" class="text-dark" aria-label="Email address">info@cloutnine.com</a>
+              </div>
+              <div class="info-item mb-3">
+                <i class="bi bi-geo-alt-fill text-accent-yellow me-3" aria-hidden="true"></i>
+                <span>123 Creative Lane, Imaginaria, CL 90001</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body p-4">
+              <form id="contactForm" novalidate>
+                <div class="row mb-4">
+                  <div class="col-md-6 mb-3 mb-md-0">
+                    <label for="first" class="form-label fw-semibold text-primary-blue">First Name</label>
+                    <input type="text" id="first" class="form-control rounded" required aria-required="true" />
+                    <div class="invalid-feedback">Please enter your first name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="last" class="form-label fw-semibold text-primary-blue">Last Name</label>
+                    <input type="text" id="last" class="form-control rounded" required aria-required="true" />
+                    <div class="invalid-feedback">Please enter your last name.</div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="email" class="form-label fw-semibold text-primary-blue">Email</label>
+                  <input type="email" id="email" class="form-control rounded" required aria-required="true" />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="phone" class="form-label fw-semibold text-primary-blue">Phone (optional)</label>
+                  <input type="tel" id="phone" class="form-control rounded" aria-describedby="phoneHelp" />
+                  <div id="phoneHelp" class="form-text">We'll only use this to contact you about your inquiry.</div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="message" class="form-label fw-semibold text-primary-blue">Message</label>
+                  <textarea id="message" class="form-control rounded" rows="5" required aria-required="true"></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+
+                <button type="submit" class="btn btn-submit bg-accent-yellow text-dark fw-bold px-5 py-2 rounded-pill">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary-blue text-white text-center py-5 mt-5">
+    <p class="mb-3">© 2025 CloutNine. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white mx-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white mx-3" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="text-white mx-3" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-white mx-3" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+
+    // Initialize AOS
+AOS.init({
+  duration: 800,
+  easing: 'ease-out',
+  once: false,
+  offset: 100
+});
+
+// Form validation and submission for contact form
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = this;
+  let isValid = true;
+
+  // Reset previous validation states
+  form.querySelectorAll('.form-control').forEach(input => {
+    input.classList.remove('is-invalid');
+  });
+
+  // Validate inputs
+  const first = form.querySelector('#first').value.trim();
+  const last = form.querySelector('#last').value.trim();
+  const email = form.querySelector('#email').value.trim();
+  const message = form.querySelector('#message').value.trim();
+
+  if (!first) {
+    form.querySelector('#first').classList.add('is-invalid');
+    isValid = false;
+  }
+  if (!last) {
+    form.querySelector('#last').classList.add('is-invalid');
+    isValid = false;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    form.querySelector('#email').classList.add('is-invalid');
+    isValid = false;
+  }
+  if (!message) {
+    form.querySelector('#message').classList.add('is-invalid');
+    isValid = false;
+  }
+
+  // Remove existing alerts
+  const existingAlert = form.querySelector('.alert');
+  if (existingAlert) existingAlert.remove();
+
+  // Display feedback
+  if (isValid) {
+    const successAlert = document.createElement('div');
+    successAlert.className = 'alert alert-success mt-4 rounded';
+    successAlert.textContent = 'Thank you for your message! We’ll get back to you soon.';
+    form.appendChild(successAlert);
+    form.reset();
+    setTimeout(() => successAlert.remove(), 5000);
+  } else {
+    const errorAlert = document.createElement('div');
+    errorAlert.className = 'alert alert-danger mt-4 rounded';
+    errorAlert.textContent = 'Please fill out all required fields correctly.';
+    form.appendChild(errorAlert);
+    setTimeout(() => errorAlert.remove(), 5000);
+  }
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+footer {
+  background-color: #004396;
+  color: white;
+  padding: 3rem 2rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container h2,
+.footer-container h3 {
+  color: #ffe547;
+}
+
+.footer-container a {
+  color: #ffe547;
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+}
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>CloutNine</h2>
+      <p>Creative minds shaping bold brands through strategy, content, and innovation.</p>
+    </div>
+    <div class="footer-contact">
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:cloutnine.work@gmail.com">cloutnine.work@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919321745330">9321745330</a></p>
+      <p>Website: <a href="https://cloutnine.in" target="_blank">cloutnine.in</a></p>
+    </div>
+    <div class="footer-links">
+      <h3>Our Services</h3>
+      <ul>
+        <li>Content Creation</li>
+        <li>Community Engagement</li>
+        <li>Branding & Strategy</li>
+        <li>Campaign Execution</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CloutNine. All rights reserved.</p>
+  </div>
+</footer>
+

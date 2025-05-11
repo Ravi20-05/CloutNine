@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | CloutNine</title>
+    <style>
+      :root {
+        --primary-blue: #004396;
+        --accent-yellow: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          to bottom right,
+          var(--primary-blue),
+          #022c6e
+        );
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        transition: background-color 0.5s ease;
+      }
+
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .navbar .logo img {
+        width: 40px;
+        height: auto;
+        margin-right: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar .logo span {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-blue);
+        text-transform: uppercase;
+      }
+
+      .navbar a {
+        margin-left: 1.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .navbar a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--accent-yellow);
+        transition: width 0.3s ease;
+      }
+
+      .navbar a:hover::after {
+        width: 100%;
+      }
+
+      .navbar a:hover {
+        color: var(--accent-yellow);
+      }
+
+      /* Development Banner */
+      .dev-banner {
+        position: fixed;
+        top: 80px; /* Adjust based on navbar height */
+        width: 100%;
+        background-color: var(--primary-blue);
+        color: var(--accent-yellow);
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.5rem 0;
+        z-index: 999;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .dev-message {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee 15s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 3rem 2rem;
+        margin-top: 40px; /* Offset for fixed dev banner */
+        animation: fadeIn 1s ease-in;
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: var(--accent-yellow);
+        margin-bottom: 1rem;
+        animation: slideUp 1s ease-in-out;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        animation: fadeIn 1.5s ease-in;
+      }
+
+      .section {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 5px solid var(--accent-yellow);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        animation: fadeIn 1s ease-in forwards;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: #002c6d;
+        color: #ccc;
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        .dev-banner {
+          top: 120px; /* Adjust for taller navbar on mobile */
+          font-size: 0.9rem;
+          padding: 0.4rem 0;
+        }
+
+        .container {
+          margin-top: 60px; /* Adjust for banner */
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="logo">
+        <a href="/" data-aos="fade-in" data-aos-delay="100">
+          <img src="/images/logo.png" alt="Logo" />
+          <span>CloutNine</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" data-aos="fade-in" data-aos-delay="100">Home</a>
+        <a href="/about" data-aos="fade-in" data-aos-delay="200">About</a>
+        <a
+          href="https://drive.google.com/drive/folders/1Ge_4ucbb6pKshHB9i1ywn1sCf2x50rYx?usp=sharing"
+          data-aos="fade-in"
+          data-aos-delay="300"
+          >Portfolio</a
+        >
+        <a href="/contact" data-aos="fade-in" data-aos-delay="400">Contact</a>
+      </div>
+    </nav>
+
+    <div class="dev-banner">
+      <span class="dev-message">Website is still under development</span>
+    </div>
+
+    <div class="container">
+      <h1>Who We Are</h1>
+      <div class="section">
+        <p>
+          CloutNine is a creative force focused on building bold brands through
+          strategic digital marketing and content mastery. We empower startups
+          and scaling businesses to establish a dynamic online presence through
+          data-driven campaigns, high-impact visuals, and optimized social
+          strategies.
+        </p>
+      </div>
+
+      <h1>What We Do</h1>
+      <div class="section">
+        <p>
+          Our mission is to make world-class social media management and
+          marketing accessible to every business. From creative storytelling to
+          performance analysis, we blend strategy and imagination to drive
+          engagement and growth across platforms.
+        </p>
+      </div>
+
+      <h1>How We Do It</h1>
+      <div class="section">
+        <p>
+          We begin with a discovery call to understand your brand, onboard you
+          with personalized setup, build content calendars, execute campaigns,
+          and analyze results — prioritizing, optimizing, and innovating at
+          every step.
+        </p>
+      </div>
+
+      <h1>Why CloutNine?</h1>
+      <div class="section">
+        <p>
+          We help you overcome common business challenges like low engagement,
+          inconsistent branding, high marketing costs, and lack of creative
+          ideas — all through consistent management, innovative content, and
+          cost-effective strategies.
+        </p>
+      </div>
+    </div>
+
+    <footer>© 2025 CloutNine. All rights reserved.</footer>
+  </body>
+</html>
